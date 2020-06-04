@@ -72,6 +72,8 @@ while True: #has to be capital T for True
         print("f {command} entered")
         newuser.move(command)
         print(f"\n {newuser.name} is in {newuser.current_room.name}\n")
+    else:
+        print("Invalid command, please read the directions!")
 
 # Print an error message if the movement isn't allowed.
 #
