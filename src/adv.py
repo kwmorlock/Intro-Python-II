@@ -54,31 +54,37 @@ room['treasure'].s_to = room['narrow']
 newuser = Player('Kenzie', room['outside']) #cant use camelcase!
 
 # Write a loop that:
-running = True
-while running:
-# while True: #has to be capital T for True
-
+# running = True
+# while running:
+while True: #has to be capital T for True
+    print("\n")
 #
 # * Prints the current room name
+    # print("\n")
     print("Player is in the room!", newuser.current_room.name)
 
 # * Prints the current description (the textwrap module might be useful here).
+    # print("\n")
     print(f'I think you are in', newuser.current_room.description)
 
 # * Waits for user input and decides what to do.
+    print("\n")
     command = input('Since you dont know what you are doing here are the directions, n is North, e is East, w is West, and s is South, and q is for Quitters')
     usercommand = command.lower().split(" ")
 #
 # If the user enters a cardinal direction, attempt to move to the room there.
     if command == "q":
+        print("\n")
         print("Quitter!")
         break #It terminates the current loop and resumes execution at the next statement
 
     elif command == "n" or command == "s" or command == "e" or command == "w":
-        print("f {command} entered")
+        print("\n")
+        # print("f {command} entered")
         newuser.move(command)
         print(f"\n {newuser.name} is in {newuser.current_room.name}\n {newuser.current_room.description}")
     else:
+        # print("\n")
         print("Invalid command, please read the directions!")
 
 # Print an error message if the movement isn't allowed.
