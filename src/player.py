@@ -8,3 +8,9 @@ class Player():
             self.inventory = []
         else:
             self.inventory = inventory
+
+    def on_take(self, item):
+        self.inventory.append(item)
+
+    def om_drop(self, item):
+        self.inventory.remove(item)
