@@ -6,6 +6,8 @@ from item import Item
 
 #items here?
 
+items = {'kitten': Item("Kitten", "This friend makes the perfect companion")}
+
 
 #if else for movement? 
 
