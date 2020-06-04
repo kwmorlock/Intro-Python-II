@@ -65,8 +65,10 @@ while True: #has to be capital T for True
     usercommand = command.lower().split("")
 #
 # If the user enters a cardinal direction, attempt to move to the room there.
-if command == "q":
-    print("Quitter!")
+    if command == "q":
+        print("Quitter!")
+
+    elif command == "n" or command == "s" or command == "e" or command == "w": 
 
 # Print an error message if the movement isn't allowed.
 #
