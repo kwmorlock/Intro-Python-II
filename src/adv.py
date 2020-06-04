@@ -12,6 +12,7 @@ items = {
     }
 
 
+
 #if else for movement? 
 
 room = {
@@ -26,11 +27,11 @@ into the darkness. Ahead to the north, a light flickers in
 the distance, but there is no way across the chasm."""),
 
     'narrow':   Room("Narrow Passage", """The narrow passage bends here from west
-to north. The smell of gold permeates the air."""),
+to north. The smell of gold permeates the air.""", [items['puppy']]),
 
     'treasure': Room("Treasure Chamber", """You've found the long-lost treasure
 chamber! Sadly, it has already been completely emptied by
-earlier adventurers. The only exit is to the south."""),
+earlier adventurers. The only exit is to the south.""", [items['kitten']]),
 }
 
 
@@ -44,14 +45,16 @@ room['overlook'].s_to = room['foyer']
 room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
-
+# room['treasure'].items.append(items['kitten']) #second way to add items
+# room['outside'].items.remove(items['kitten'])
+# room['narrow'].list_items(items['puppy'])
 #
 # Main
 #
 
 # Make a new player object that is currently in the 'outside' room.
 
-newuser = Player('Kenzie', room['outside']) #cant use camelcase!
+newuser = Player('Kenzie', room['foyer']) #cant use camelcase!
 
 # Write a loop that:
 # running = True
@@ -61,11 +64,11 @@ while True: #has to be capital T for True
 #
 # * Prints the current room name
     # print("\n")
-    print("Player is in the room!", newuser.current_room.name)
+    print("Player is in the room!\n", newuser.current_room.name)
 
 # * Prints the current description (the textwrap module might be useful here).
     # print("\n")
-    print(f'I think you are in', newuser.current_room.description)
+    print(f'\nI think you are in', newuser.current_room.description)
 
 # * Waits for user input and decides what to do.
     print("\n")
@@ -82,7 +85,7 @@ while True: #has to be capital T for True
         print("\n")
         # print("f {command} entered")
         newuser.move(command)
-        print(f"\n {newuser.name} is in {newuser.current_room.name}\n {newuser.current_room.description}")
+        print(f"\n {newuser.name} is in {newuser.current_room.name}\n {newuser.current_room.description} {newuser.current_room.list_items()}\n")
     else:
         # print("\n")
         print("Invalid command, please read the directions!")

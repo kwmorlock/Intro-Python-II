@@ -16,7 +16,7 @@ class Room():
 
     def list_items(self):
         if not self.items:
-            print("wow no items that sucks")
+            print("Your pets got away")
         else:
             print("Steal the: ")
             for item in self.items:
