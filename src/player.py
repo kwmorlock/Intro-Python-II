@@ -12,5 +12,5 @@ class Player():
     def on_take(self, item):
         self.inventory.append(item)
 
-    def om_drop(self, item):
+    def on_drop(self, item):
         self.inventory.remove(item)

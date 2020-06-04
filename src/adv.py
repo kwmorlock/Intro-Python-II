@@ -4,6 +4,11 @@ from item import Item
 
 # Declare all the rooms
 
+#items here?
+
+
+#if else for movement? 
+
 room = {
     'outside':  Room("Outside Cave Entrance",
                      "North of you, the cave mount beckons"),
