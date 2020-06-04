@@ -51,17 +51,23 @@ room['treasure'].s_to = room['narrow']
 newuser = Player('Kenzie', room['outside']) #cant use camelcase!
 
 # Write a loop that:
+while True: #has to be capital T for True
+
 #
 # * Prints the current room name
-print("Player is in the room!", newuser.current_room.name)
+    print("Player is in the room!", newuser.current_room.name)
 
 # * Prints the current description (the textwrap module might be useful here).
-print(f'I think you are in', newuser.current_room.description)
+    print(f'I think you are in', newuser.current_room.description)
 
 # * Waits for user input and decides what to do.
-command = input('Since you dont know what you are doing here are the directions, n is North, e is East, w is West, and s is South, and q is for Quitters')
+    command = input('Since you dont know what you are doing here are the directions, n is North, e is East, w is West, and s is South, and q is for Quitters')
+    usercommand = command.lower().split("")
 #
 # If the user enters a cardinal direction, attempt to move to the room there.
+if command == "q":
+    print("Quitter!")
+
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
