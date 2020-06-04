@@ -68,7 +68,10 @@ while True: #has to be capital T for True
     if command == "q":
         print("Quitter!")
 
-    elif command == "n" or command == "s" or command == "e" or command == "w": 
+    elif command == "n" or command == "s" or command == "e" or command == "w":
+        print("f {command} entered")
+        newuser.move(command)
+        print(f"\n {newuser.name} is in {newuser.current_room.name}\n")
 
 # Print an error message if the movement isn't allowed.
 #
