@@ -14,7 +14,7 @@ class Room():
     def __str__(self):
         print(self.name, self.description)
 
-    def last_items(self):
+    def list_items(self):
         if not self.items:
             print("wow no items that sucks")
         else:

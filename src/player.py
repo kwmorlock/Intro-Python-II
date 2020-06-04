@@ -9,6 +9,14 @@ class Player():
         else:
             self.inventory = inventory
 
+    def move(self, direction):
+            if getattr(self.current_room, f"{direction}_to") is not None:
+                self.current_room = getattr(self.current_room, f"{direction}_to")
+            else:
+                print("Stop trying to walk into a wall!")
+                #getattr a method to get attribute, we are getting attribute from line 6, the if is no longer set to none, if the direction doesnt work its then else
+
+
     def on_take(self, item):
         self.inventory.append(item)
 
