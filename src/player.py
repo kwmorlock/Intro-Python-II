@@ -1,13 +1,14 @@
 # Write a class to hold player information, e.g. what room they are in
 # currently.
 class Player():
-    def __init__(self, name, current_room, inventory):
+    def __init__(self, name, current_room, inventory=[]):
         self.name = name
         self.current_room = current_room
-        if inventory == []:
-            self.inventory = []
-        else:
-            self.inventory = inventory
+        self.inventory = inventory
+        # if inventory == []:
+        #     self.inventory = []
+        # else:
+        #     self.inventory = inventory
 
     def move(self, direction):
             if getattr(self.current_room, f"{direction}_to") is not None:
