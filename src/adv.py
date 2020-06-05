@@ -76,19 +76,24 @@ while True: #has to be capital T for True
     usercommand = command.lower().split(" ")
 #
 # If the user enters a cardinal direction, attempt to move to the room there.
-    if command == "q":
-        print("\n")
-        print("Quitter!")
-        break #It terminates the current loop and resumes execution at the next statement
+    if len(usercommand) ==1:
+        if command == "q":
+            print("\n")
+            print("Quitter!")
+            break #It terminates the current loop and resumes execution at the next statement
 
-    elif command == "n" or command == "s" or command == "e" or command == "w":
-        print("\n")
+        elif command == "n" or command == "s" or command == "e" or command == "w":
+            print("\n")
         # print("f {command} entered")
-        newuser.move(command)
-        print(f"\n {newuser.name} is in {newuser.current_room.name}\n {newuser.current_room.description} {newuser.current_room.list_items()}\n")
-    else:
+            newuser.move(command)
+            print(f"\n {newuser.name} is in {newuser.current_room.name}\n {newuser.current_room.description} {newuser.current_room.list_items()}\n")
+    
+        elif command == "i":
+            newuser.show_items()
+    
+        else:
         # print("\n")
-        print("Invalid command, please read the directions!")
+            print("Invalid command, please read the directions!")
 
 # Print an error message if the movement isn't allowed.
 #
