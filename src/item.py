@@ -3,8 +3,8 @@ class Item():
         self.name = name
         self.description = description
 
-    def __str__(self):
-        return f"{self.name} \n{self.description}"
+    # def __str__(self):
+    #     return f"{self.name} \n{self.description}"
 
     def on_take(self, player):
         player.items.append(self)

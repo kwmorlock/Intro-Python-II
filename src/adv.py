@@ -6,10 +6,10 @@ from item import Item
 
 #items here?
 
-items = {
-    'kitten': Item("Kitten", "This friend makes the perfect companion!"),
-    'puppy': Item("Puppy", "This friend makes the perfect companion!")
-    }
+# items = {
+#     'kitten': Item("Kitten", "This friend makes the perfect companion!"),
+#     'puppy': Item("Puppy", "This friend makes the perfect companion!")
+#     }
 
 
 
@@ -27,11 +27,11 @@ into the darkness. Ahead to the north, a light flickers in
 the distance, but there is no way across the chasm."""),
 
     'narrow':   Room("Narrow Passage", """The narrow passage bends here from west
-to north. The smell of gold permeates the air.""", [items['puppy']]),
+to north. The smell of gold permeates the air.""", [Item("puppy", "This friend makes the perfect companion!")]),
 
     'treasure': Room("Treasure Chamber", """You've found the long-lost treasure
 chamber! Sadly, it has already been completely emptied by
-earlier adventurers. The only exit is to the south.""", [items['kitten']]),
+earlier adventurers. The only exit is to the south.""", [Item("kitten", "This friend makes the perfect companion!")]),
 }
 
 
@@ -94,6 +94,20 @@ while True: #has to be capital T for True
         else:
         # print("\n")
             print("Invalid command, please read the directions!")
+
+    elif len(usercommand) ==2:
+        if usercommand[0] in ['steal', 'pet']:
+            for item in newuser.current_room.items:
+                if item.name == usercommand[1]:
+                    item.on_take(newuser)
+                else:
+                    print(f"{usercommand[1]} nothing cute here")
+        elif usercommand[0] in ['drop']:
+            for item in newuser.items:
+                if item.name == usercommand[1]:
+                    item.on_drop(newuser)
+        else:
+            print("Type something else")
 
 # Print an error message if the movement isn't allowed.
 #
