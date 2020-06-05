@@ -54,7 +54,7 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 
-newuser = Player('Kenzie', room['foyer']) #cant use camelcase!
+newuser = Player('Kenzie', room['outside']) #cant use camelcase!
 
 # Write a loop that:
 # running = True
