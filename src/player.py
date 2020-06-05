@@ -20,6 +20,15 @@ class Player():
     def __str__(self):
         print(self.name, self.current_room, self.items)
 
+    def show_items(self):
+        if not self.items:
+            print("You have no pets")
+        else:
+            print("All your pets!")
+            for loop in self.items:
+                print(loop.name)
+
+
     # def on_take(self, item):
     #     self.inventory.append(item)
 
